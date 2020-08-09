@@ -14,7 +14,10 @@ class CreateProyekdtlsTable extends Migration
     public function up()
     {
         Schema::create('proyekdtls', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->>unsignedBigIngteger('idproyek');
+            $table->foreign('idproyek')->reference('idproyek')->on('proyeks');
+            $table->>unsignedBigIngteger('idstass');
+            $table->foreign('idstaff')->reference('idkaryawan')->on('karyawans');
             $table->timestamps();
         });
     }

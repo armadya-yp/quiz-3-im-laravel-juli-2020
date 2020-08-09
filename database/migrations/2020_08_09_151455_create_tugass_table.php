@@ -14,7 +14,10 @@ class CreateTugassTable extends Migration
     public function up()
     {
         Schema::create('tugass', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->>unsignedBigIngteger('idkaryawan');
+            $table->foreign('idkaryawan')->reference('idkaryawan')->on('karyawans');
+            $table->>unsignedBigIngteger('idmanager');
+            $table->foreign('idmanager')->reference('idkaryawan')->on('karyawans');
             $table->timestamps();
         });
     }

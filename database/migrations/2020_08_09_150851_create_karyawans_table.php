@@ -14,7 +14,9 @@ class CreateKaryawansTable extends Migration
     public function up()
     {
         Schema::create('karyawans', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('idkaryawan');
+            $table->string[100]('nama');
+            $table->string[45]('jabatan');
             $table->timestamps();
         });
     }

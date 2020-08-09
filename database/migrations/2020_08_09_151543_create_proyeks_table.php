@@ -14,7 +14,14 @@ class CreateProyeksTable extends Migration
     public function up()
     {
         Schema::create('proyeks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('idproyek');
+            $table->string[45]('proyeknama');
+            $table->string[100]('proyekdesc');
+            $table->date('proyekmulai');
+            $table->date('proyekdeadline');
+            $table->tiny('proyekstatus');
+            $table->unsignedBigIngteger('proyekman');
+            $table->foreign('proyekman')->reference('idkaryawan')->on('karyawans');
             $table->timestamps();
         });
     }
